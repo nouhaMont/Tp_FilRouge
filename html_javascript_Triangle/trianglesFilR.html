@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+
+ <form name="triangle" method="GET" id="form"> 
+<fieldset>
+<legend> Trouver le type de triangle:</legend><br/><br/><br/>
+<label >Entrez la longueur du côté x  :</label>
+<input type="text" id="input1" name="x"/><br/><br/>
+<label>Entrez la longueur du côté y  :</label>
+<input type="text" id="input2" name="y"/><br/><br/>
+<label>Entrez la longueur du côté z  :</label>
+<input type="text" id="input3" name="z"/><br/><br/>
+
+<button onclick="getTriangle()">Cliquer ici </button>
+</fieldset><br/><br/><br/>
+
+</form>
+
+ 
+
+<script language="Javascript" type="text/javascript">
+
+
+
+function getTriangle()
+{
+
+    var  a= document.getElementById("input1").value;
+	var  b= document.getElementById("input2").value;
+	var  c= document.getElementById("input3").value;
+    
+
+if (a == b && b == c) {
+		//alert("equilateral");
+		//var img = document.createElement("img");
+        //img.src = "img1.png";
+		//var div = document.getElementById("x");
+		//div.appendChild(img);
+       // div.setAttribute("style", "text-align:center");   
+	   //document.location.href="equilat.html"; 
+	   
+	   document.getElementById("form").action ="equilat.html";
+
+
+}
+
+else if ((a==b && b!=c ) || (a!=b && c==a) || (c==b && c!=a)){
+             
+		  //alert("isosceles");
+		  //var img = document.createElement("img");
+         //img.src = "img2.png";
+		 //var div = document.getElementById("x");
+		 //div.appendChild(img);
+         //div.setAttribute("style", "text-align:center");
+		 
+         document.getElementById("form").action ="isoscele.html";
+
+}
+
+else if  (a!=b && b!=c && c!=a){
+
+       //alert("scalène"); 
+	   //var img = document.createElement("img");
+       //img.src = "img3.png";
+	   //var div = document.getElementById("x");
+	   //div.appendChild(img);
+      // div.setAttribute("style", "text-align:center");
+	  
+	   document.getElementById("form").action ="scalene.html";
+
+
+}
+}
+
+</script>
+
+
+</body>
+
+</html>
